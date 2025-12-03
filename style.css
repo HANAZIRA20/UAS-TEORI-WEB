@@ -1,33 +1,39 @@
 /* ===========================================
-   GLOBAL FONT & BODY
+   GLOBAL FONT & BODY (CLEAN STYLE)
    =========================================== */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #f5f7fb;
+    /* Menggunakan font sistem yang standar agar loading cepat & tajam */
+    font-family: 'Segoe UI', 'Inter', Roboto, sans-serif; 
+    background: #f1f5f9; /* Abu-abu sangat muda (Slate-100) */
+    color: #334155; /* Teks tidak hitam pekat, tapi abu tua (Slate-700) */
     margin: 0;
 }
 
 /* ===========================================
-   SIDEBAR
+   SIDEBAR (FLAT & PROFESSIONAL)
    =========================================== */
 .sidebar {
     width: 260px;
     height: 100vh;
-    background: linear-gradient(180deg, #4F46E5, #6D28D9);
+    background: #ffffff; /* Ubah dari gradasi ke Putih Bersih */
     padding-top: 30px;
     position: fixed;
     left: 0;
     top: 0;
-    box-shadow: 3px 0 15px rgba(0,0,0,0.15);
+    /* Ganti shadow tebal dengan garis batas tipis */
+    border-right: 1px solid #e2e8f0; 
+    box-shadow: none; 
+    z-index: 1000;
 }
 
 .sidebar .menu-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #e4d7ff;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #94a3b8; /* Abu-abu medium */
     padding-left: 25px;
-    margin-bottom: 10px;
-    opacity: .8;
+    margin-bottom: 15px;
 }
 
 .sidebar ul { padding-left: 0; }
@@ -37,27 +43,31 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    padding: 12px 25px;
-    font-size: 15px;
+    padding: 10px 25px; /* Padding sedikit diperkecil agar kompak */
+    font-size: 14px;
     font-weight: 500;
-    color: #fff;
+    color: #475569; /* Teks menu abu-abu */
     text-decoration: none;
-    border-radius: 8px;
-    margin: 6px 15px;
-    transition: all 0.3s ease;
+    border-radius: 4px; /* Sudut kotak (sedikit tumpul) */
+    margin: 4px 15px;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
 }
 
 .sidebar ul li a:hover {
-    background: rgba(255, 255, 255, 0.25);
-    transform: translateX(6px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: #f8fafc;
+    color: #0d9488; /* Hijau Tosca saat hover */
+    border-color: #e2e8f0;
+    transform: none; /* Hilangkan animasi gerak */
+    box-shadow: none;
 }
 
 .sidebar ul li a.active {
-    background: #ffffff;
-    color: #4F46E5;
+    background: #0d9488; /* WARNA UTAMA: TEAL / TOSCA */
+    color: #ffffff;
     font-weight: 600;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+    box-shadow: none;
+    border-color: #0d9488;
 }
 
 /* ===========================================
@@ -65,24 +75,25 @@ body {
    =========================================== */
 .content {
     margin-left: 260px;
-    padding: 25px;
+    padding: 30px;
 }
 
 /* ===========================================
-   DASHBOARD KARTU
+   DASHBOARD KARTU (MINIMALIS)
    =========================================== */
 .card-custom {
-    border: none;
-    border-radius: 18px;
+    border: 1px solid #e2e8f0; /* Garis tipis */
+    border-radius: 6px; /* Radius kecil */
     padding: 20px;
     background: #ffffff;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: 0.3s ease;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05); /* Shadow sangat halus */
+    transition: 0.2s ease;
 }
 
+/* Menghilangkan efek melayang berlebihan agar lebih serius */
 .card-custom:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transform: none; 
+    border-color: #cbd5e1;
 }
 
 /* ===========================================
@@ -93,35 +104,41 @@ body {
     border-collapse: separate;
     border-spacing: 0;
     background: #ffffff;
-    border-radius: 14px;
+    border-radius: 6px;
     overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    /* Ganti shadow dengan border */
+    box-shadow: none;
+    border: 1px solid #e2e8f0; 
 }
 
 .table-modern thead tr {
-    background: linear-gradient(135deg, #4F46E5, #7C3AED);
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    letter-spacing: 0.5px;
+    /* Hapus gradasi, ganti warna solid kalem */
+    background: #f8fafc; 
+    color: #334155;
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #e2e8f0;
 }
 
 .table-modern thead th {
-    padding: 14px 12px;
-    border: none;
+    padding: 16px 16px;
+    border-bottom: 1px solid #e2e8f0;
 }
 
 .table-modern tbody tr {
-    transition: 0.25s;
+    transition: 0.2s;
 }
 
 .table-modern tbody td {
-    padding: 12px;
-    border-bottom: 1px solid #e5e7eb;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #475569;
 }
 
 .table-modern tbody tr:hover {
-    background: #f4f0ff;
+    background: #f1f5f9; /* Highlight baris saat ditunjuk */
 }
 
 .table-modern tbody tr:last-child td {
@@ -129,61 +146,77 @@ body {
 }
 
 /* ===========================================
-   BADGE STOK
+   BADGE STOK (FLAT COLORS)
    =========================================== */
 .badge-stok {
-    padding: 5px 10px;
-    border-radius: 8px;
-    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 4px; /* Kotak */
+    font-size: 11px;
     color: white;
-    font-weight: bold;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-.badge-hijau { background-color: #28a745; }
-.badge-kuning { background-color: #ffc107; color: #000; }
-.badge-merah { background-color: #dc3545; }
+/* Warna disesuaikan agar tidak terlalu neon */
+.badge-hijau { background-color: #10b981; } /* Emerald */
+.badge-kuning { background-color: #f59e0b; color: #fff; } /* Amber */
+.badge-merah { background-color: #ef4444; } /* Red */
 
 /* ===========================================
-   BUTTON CUSTOM
+   BUTTON CUSTOM (TEAL THEME)
    =========================================== */
+/* Override semua tombol agar kotak & flat */
+.btn-primary, .btn-success, .btn-danger {
+    border-radius: 4px !important;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 16px;
+    box-shadow: none !important;
+    transition: background 0.2s;
+}
+
 .btn-primary {
-    background-color: #4F46E5;
-    border-color: #4F46E5;
+    background-color: #0d9488; /* Teal 600 */
+    border: 1px solid #0d9488;
+    color: white;
 }
 
 .btn-primary:hover {
-    background-color: #4338CA;
-    border-color: #4338CA;
+    background-color: #0f766e; /* Teal 700 */
+    border-color: #0f766e;
 }
 
 .btn-success {
-    background-color: #10B981;
-    border-color: #10B981;
+    background-color: #10b981;
+    border: 1px solid #10b981;
 }
 
-.btn-success:hover {
-    background-color: #0F9E73;
-    border-color: #0F9E73;
-}
+.btn-success:hover { background-color: #059669; }
 
 .btn-danger {
-    background-color: #EF4444;
-    border-color: #EF4444;
+    background-color: #ef4444;
+    border: 1px solid #ef4444;
 }
 
-.btn-danger:hover {
-    background-color: #DC2626;
-    border-color: #DC2626;
-}
+.btn-danger:hover { background-color: #dc2626; }
 
 /* ===========================================
-   CARD FORM INPUT
+   CARD FORM INPUT (OVERRIDE BOOTSTRAP)
    =========================================== */
 .card {
-    border-radius: 14px !important;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    border-radius: 6px !important;
+    border: 1px solid #e2e8f0;
+    box-shadow: none !important;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    font-weight: 600;
+    color: #334155;
 }
 
 .card-body {
-    border-radius: 14px;
+    padding: 24px;
 }
